@@ -1,0 +1,187 @@
+tomas@DESKTOP-U0B4LLP:~/esp/idf/esp-idf/examples/get-started/hello_world$ idf.py -p /dev/ttyUSB0 flash monitor
+Executing action: flash
+Running make in directory /home/tomas/esp/idf/esp-idf/examples/get-started/hello_world/build
+Executing "make -j 6 flash"...
+[  0%] Built target _project_elf_src
+[  0%] Built target memory.ld
+[  0%] Built target sections.ld.in
+[  0%] Built target custom_bundle
+[  0%] Built target partition_table_bin
+[  1%] Built target __idf_cxx
+[  2%] Performing build step for 'bootloader'
+[  3%] Built target __idf_pthread
+[  7%] Built target __idf_newlib
+[  1%] Built target _project_elf_src
+[  8%] Built target __idf_log
+[ 15%] Built target __idf_esp_rom
+[ 10%] Built target __idf_freertos
+[ 17%] Built target __idf_esp_common
+[ 19%] Built target __idf_esp_hw_support
+[ 26%] Built target __idf_esp_hw_support
+[ 20%] Built target __idf_esp_security
+[ 28%] Built target __idf_esp_system
+[ 26%] Built target __idf_soc
+[ 35%] Built target __idf_efuse
+[ 27%] Built target __idf_heap
+[ 55%] Built target __idf_bootloader_support
+[ 30%] Built target __idf_log
+[ 57%] Built target __idf_esp_bootloader_format
+[ 40%] Built target __idf_hal
+[ 58%] Built target __idf_spi_flash
+[ 42%] Built target __idf_esp_rom
+[ 65%] Built target __idf_hal
+[ 43%] Built target __idf_esp_common
+[ 67%] Built target __idf_micro-ecc
+[ 91%] Built target __idf_soc
+[ 51%] Built target __idf_esp_system
+[ 94%] Built target __idf_xtensa
+[ 55%] Built target __idf_spi_flash
+[ 96%] Built target __idf_main
+[ 57%] Built target __idf_esp_mm
+[ 98%] Built target bootloader.elf
+[100%] Built target gen_project_binary
+[ 61%] Built target __idf_bootloader_support
+[ 62%] Built target __idf_efuse
+[ 62%] Built target __idf_esp_partition
+Bootloader binary size 0x6650 bytes. 0x9b0 bytes (9%) free.
+[100%] Built target bootloader_check_size
+[ 62%] Built target __idf_app_update
+[100%] Built target app
+[ 62%] Built target __idf_esp_bootloader_format
+[ 62%] No install step for 'bootloader'
+[ 63%] Built target __idf_esp_app_format
+[ 63%] Completed 'bootloader'
+[ 67%] Built target mbedtls
+[ 68%] Built target bootloader
+[ 70%] Built target mbedx509
+[ 90%] Built target mbedcrypto
+[ 90%] Built target p256m
+[ 91%] Built target everest
+[ 92%] Built target __idf_mbedtls
+[ 93%] Built target __idf_esp_pm
+[ 95%] Built target __idf_esp_timer
+[ 95%] Built target __idf_esp_driver_gpio
+[ 97%] Built target __idf_xtensa
+[ 98%] Built target __idf_main
+[ 98%] Built target __ldgen_output_sections.ld
+[100%] Built target hello_world.elf
+[100%] Built target gen_project_binary
+hello_world.bin binary size 0x25ae0 bytes. Smallest app partition is 0x100000 bytes. 0xda520 bytes (85%) free.
+[100%] Built target app_check_size
+[100%] Built target app
+esptool.py --chip esp32 -p /dev/ttyUSB0 -b 460800 --before=default_reset --after=hard_reset write_flash --flash_mode dio --flash_freq 40m --flash_size 2MB 0x1000 bootloader/bootloader.bin 0x10000 hello_world.bin 0x8000 partition_table/partition-table.bin
+esptool.py v4.9.dev6
+Serial port /dev/ttyUSB0
+Connecting.........
+Chip is ESP32-D0WDQ6 (revision v1.1)
+Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None
+Crystal is 40MHz
+MAC: 08:f9:e0:eb:f5:ac
+Uploading stub...
+Running stub...
+Stub running...
+Changing baud rate to 460800
+Changed.
+Configuring flash size...
+Flash will be erased from 0x00001000 to 0x00007fff...
+Flash will be erased from 0x00010000 to 0x00035fff...
+Flash will be erased from 0x00008000 to 0x00008fff...
+SHA digest in image updated
+Compressed 26192 bytes to 16513...
+Writing at 0x000075a3... (100 %)
+Wrote 26192 bytes (16513 compressed) at 0x00001000 in 0.6 seconds (effective 338.4 kbit/s)...
+Hash of data verified.
+Compressed 154336 bytes to 84497...
+Writing at 0x0003485a... (100 %)
+Wrote 154336 bytes (84497 compressed) at 0x00010000 in 2.0 seconds (effective 602.7 kbit/s)...
+Hash of data verified.
+Compressed 3072 bytes to 103...
+Writing at 0x00008000... (100 %)
+Wrote 3072 bytes (103 compressed) at 0x00008000 in 0.0 seconds (effective 730.6 kbit/s)...
+Hash of data verified.
+
+Leaving...
+Hard resetting via RTS pin...
+[100%] Built target flash
+Executing action: monitor
+Running idf_monitor in directory /home/tomas/esp/idf/esp-idf/examples/get-started/hello_world
+Executing "/home/tomas/esp/idf-tools/python_env/idf5.5_py3.12_env/bin/python /home/tomas/esp/idf/esp-idf/tools/idf_monitor.py -p /dev/ttyUSB0 -b 115200 --toolchain-prefix xtensa-esp32-elf- --target esp32 --revision 0 /home/tomas/esp/idf/esp-idf/examples/get-started/hello_world/build/hello_world.elf /home/tomas/esp/idf/esp-idf/examples/get-started/hello_world/build/bootloader/bootloader.elf -m '/home/tomas/esp/idf-tools/python_env/idf5.5_py3.12_env/bin/python' '/home/tomas/esp/idf/esp-idf/tools/idf.py' '-p' '/dev/ttyUSB0'"...
+--- esp-idf-monitor 1.6.2 on /dev/ttyUSB0 115200
+--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H
+et�ets Jun  8 2016 00:22:57
+
+rst:0x1 (POWERON_RESET),boot:0x13 (SPI_FAST_FLASH_BOOT)
+configsip: 0, SPIWP:0xee
+clk_drv:0x00,q_drv:0x00,d_drv:0x00,cs0_drv:0x00,hd_drv:0x00,wp_drv:0x00
+mode:DIO, clock div:2
+load:0x3fff0030,len:6364
+ho 0 tail 12 room 4
+load:0x40078000,len:15880
+ho 0 tail 12 room 4
+load:0x40080400,len:3860
+--- 0x40080400: _invalid_pc_placeholder at /home/tomas/esp/idf/esp-idf/components/xtensa/xtensa_vectors.S:2235
+
+entry 0x40080638
+--- 0x40080638: call_start_cpu0 at /home/tomas/esp/idf/esp-idf/components/bootloader/subproject/main/bootloader_start.c:25
+
+I (30) boot: ESP-IDF v5.5-dev-2752-ga3864c088d 2nd stage bootloader
+I (31) boot: compile time Apr  3 2025 09:53:51
+I (31) boot: Multicore bootloader
+I (33) boot: chip revision: v1.1
+I (36) boot.esp32: SPI Speed      : 40MHz
+I (40) boot.esp32: SPI Mode       : DIO
+I (43) boot.esp32: SPI Flash Size : 2MB
+I (47) boot: Enabling RNG early entropy source...
+I (52) boot: Partition Table:
+I (54) boot: ## Label            Usage          Type ST Offset   Length
+I (60) boot:  0 nvs              WiFi data        01 02 00009000 00006000
+I (67) boot:  1 phy_init         RF data          01 01 0000f000 00001000
+I (74) boot:  2 factory          factory app      00 00 00010000 00100000
+I (80) boot: End of partition table
+I (83) esp_image: segment 0: paddr=00010020 vaddr=3f400020 size=07490h ( 29840) map
+I (101) esp_image: segment 1: paddr=000174b8 vaddr=3ff80000 size=0001ch (    28) load
+I (101) esp_image: segment 2: paddr=000174dc vaddr=3ffb0000 size=02164h (  8548) load
+I (109) esp_image: segment 3: paddr=00019648 vaddr=40080000 size=069d0h ( 27088) load
+I (124) esp_image: segment 4: paddr=00020020 vaddr=400d0020 size=0fc68h ( 64616) map
+I (146) esp_image: segment 5: paddr=0002fc90 vaddr=400869d0 size=05e28h ( 24104) load
+I (162) boot: Loaded app from partition at offset 0x10000
+I (162) boot: Disabling RNG early entropy source...
+I (173) cpu_start: Multicore app
+I (181) cpu_start: Pro cpu start user code
+I (181) cpu_start: cpu freq: 160000000 Hz
+I (181) app_init: Application information:
+I (181) app_init: Project name:     hello_world
+I (185) app_init: App version:      v5.5-dev-2752-ga3864c088d
+I (191) app_init: Compile time:     Apr  3 2025 09:53:51
+I (196) app_init: ELF file SHA256:  5d69fe913...
+I (200) app_init: ESP-IDF:          v5.5-dev-2752-ga3864c088d
+I (206) efuse_init: Min chip rev:     v0.0
+I (209) efuse_init: Max chip rev:     v3.99
+I (213) efuse_init: Chip rev:         v1.1
+I (218) heap_init: Initializing. RAM available for dynamic allocation:
+I (224) heap_init: At 3FFAE6E0 len 00001920 (6 KiB): DRAM
+I (229) heap_init: At 3FFB29C0 len 0002D640 (181 KiB): DRAM
+I (234) heap_init: At 3FFE0440 len 00003AE0 (14 KiB): D/IRAM
+I (239) heap_init: At 3FFE4350 len 0001BCB0 (111 KiB): D/IRAM
+I (245) heap_init: At 4008C7F8 len 00013808 (78 KiB): IRAM
+I (251) spi_flash: detected chip: generic
+I (254) spi_flash: flash io: dio
+W (257) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.
+I (270) main_task: Started on CPU0
+I (280) main_task: Calling app_main()
+Tomás Córdova
+This is esp32 chip with 2 CPU core(s), WiFi/BTBLE, silicon revision v1.1, 2MB external flash
+Minimum free heap size: 306216 bytes
+Restarting in 10 seconds...
+Restarting in 9 seconds...
+Restarting in 8 seconds...
+Restarting in 7 seconds...
+Restarting in 6 seconds...
+Restarting in 5 seconds...
+Restarting in 4 seconds...
+Restarting in 3 seconds...
+Restarting in 2 seconds...
+Restarting in 1 seconds...
+Restarting in 0 seconds...
+Restarting now.
+

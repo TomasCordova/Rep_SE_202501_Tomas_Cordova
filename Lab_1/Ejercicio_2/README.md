@@ -1,0 +1,1 @@
+Se distribuyen las variables modificables en el codigo al inicio, y se explica con detalle los graficos obtenidos en el pdf.

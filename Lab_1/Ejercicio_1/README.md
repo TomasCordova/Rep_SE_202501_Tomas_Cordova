@@ -1,0 +1,2 @@
+Se puede notar en la linea 172 del output.pdf el ejercicio propuesto como aparece en la imagen "Ejercicio_1.PNG".
+También está el código implementado para el ejercicio donde se ve el cambio en la linea 18.
