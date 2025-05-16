@@ -1,0 +1,27 @@
+dependencies:
+  espressif/esp-dsp:
+    component_hash: 417886c78976489d18e7b644e98b835c65e0e249a097acb96860a66593d66a2b
+    dependencies:
+    - name: idf
+      require: private
+      version: '>=4.2'
+    source:
+      registry_url: https://components.espressif.com/
+      type: service
+    version: 1.6.2
+  espressif/esp32-camera:
+    dependencies: []
+    source:
+      path: /home/matit/esp/idf/esp32-camera
+      type: local
+    version: '*'
+  idf:
+    source:
+      type: idf
+    version: 5.5.0
+direct_dependencies:
+- espressif/esp-dsp
+- espressif/esp32-camera
+manifest_hash: c22ac8fafb1890a66073cb0b3131f3994e66e5a912bc8754dea925fd735139df
+target: esp32
+version: 2.0.0

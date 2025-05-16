@@ -1,0 +1,23 @@
+FPS = 0.137931ms (240Hz)
+
+----------------------------------------------------------------------------------
+
+frecuencia_1 = 240Hz
+frecuencia_2 = 160Hz
+frecuencia_3 = 80hz
+
+FPS_1 = 0.138ms
+FPS_2 = 0,108ms
+FPS_3 = 0,078ms
+
+Corriente_1 = 0.140A
+Corriente_2 = 0.110A
+Corriente_3 = 0.080A
+
+Potencia_1 = 0.70W
+Potencia_2 = 0.55W
+Potencia_3 = 0.40W
+
+Energía_1 = 0.097J
+Energía_2 = 0.059J
+Energía_3 = 0.031J
