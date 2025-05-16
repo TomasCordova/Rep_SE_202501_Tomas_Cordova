@@ -262,7 +262,6 @@ void app_main(void)
         camera_fb_t *pic = esp_camera_fb_get();
         // para el ej 4 se comenta la siguiente linea
         equalize_histogram(pic->buf, pic->len);
-        apply_sobel_filter(pic->buf);
 
         // Crear buffer para filtro sobel
         uint8_t *sobel_out = malloc(pic->len);
